@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyEman - Contingency Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #1B7E83;
+            --teal-dark: #156469;
+            --teal-light: #E8F4F4;
+            --grey: #666666;
+            --dark: #333333;
+            --white: #FFFFFF;
+            --warning: #E74C3C;
+            --warning-light: #FADBD8;
+            --amber: #F39C12;
+            --amber-light: #FEF5E7;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            padding: 50px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid var(--teal-light);
+        }
+        .header h1 {
+            font-size: 28px;
+            color: var(--dark);
+            font-weight: 600;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 40px 0 25px 0;
+        }
+        .section-title h2 {
+            font-size: 22px;
+            color: var(--teal);
+            font-weight: 700;
+        }
+        .section-title .line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, var(--teal), transparent);
+        }
+        .contingency-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .contingency-table th {
+            background: var(--teal);
+            color: var(--white);
+            padding: 15px 20px;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .contingency-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--teal-light);
+            font-size: 13px;
+            color: var(--dark);
+        }
+        .contingency-table tr:last-child td {
+            border-bottom: none;
+        }
+        .contingency-table .scenario-col {
+            font-weight: 600;
+        }
+        .contingency-table .rp-badge {
+            background: var(--teal-light);
+            color: var(--teal-dark);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            display: inline-block;
+        }
+        .contingency-table .escalation-badge {
+            background: var(--warning-light);
+            color: var(--warning);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            display: inline-block;
+        }
+        .contingency-table .amber-badge {
+            background: var(--amber-light);
+            color: var(--amber);
+             padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>MyEman - Contingency Plan</h1>
+        </div>
+
+        <!-- Staff Absence -->
+        <div class="section-title">
+            <h2>1. Staff Absence</h2>
+            <div class="line"></div>
+        </div>
+        <table class="contingency-table">
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Primary Backup</th>
+                    <th>Secondary Backup / Escalation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="scenario-col">CSR-01</td><td>Another CSR</td><td><span class="escalation-badge">MGR-01</span></td></tr>
+                <tr><td class="scenario-col">SLS-01 / SLS-02</td><td>Other Sales Consultant</td><td><span class="escalation-badge">MGR-01</span></td></tr>
+                <tr><td class="scenario-col">DOC-01</td><td>OPS-01</td><td><span class="escalation-badge">MGR-01</span></td></tr>
+                <tr><td class="scenario-col">OPS-01</td><td>DOC-01</td><td><span class="escalation-badge">MGR-01</span></td></tr>
+                <tr><td class="scenario-col">PRO-01</td><td>Another PRO (if available)</td><td><span class="escalation-badge">MGR-01</span></td></tr>
+                <tr><td class="scenario-col">ACC-01</td><td>-</td><td><span class="escalation-badge">CFO (New Horizon)</span></td></tr>
+            </tbody>
+        </table>
+
+        <!-- System Failures -->
+        <div class="section-title">
+            <h2>2. System Failures</h2>
+            <div class="line"></div>
+        </div>
+        <table class="contingency-table">
+            <thead><tr><th>Scenario</th><th>Immediate Action</th><th>Responsible</th><th>Escalation</th></tr></thead>
+            <tbody>
+                <tr><td class="scenario-col">CS CRM Down</td><td>Use shared Excel sheets (Google Drive). Manually log all interactions.</td><td><span class="rp-badge">MGR-01</span></td><td><span class="escalation-badge">IT Support</span></td></tr>
+                <tr><td class="scenario-col">Payment Gateway Down</td><td>Use direct bank transfer. Send bank details manually.</td><td><span class="rp-badge">ACC-01</span></td><td><span class="escalation-badge">MGR-01</span></td></tr>
+                <tr><td class="scenario-col">Email System Down</td><td>Use WhatsApp for urgent client communication.</td><td><span class="rp-badge">All Staff</span></td><td><span class="escalation-badge">IT Support</span></td></tr>
+                <tr><td class="scenario-col">WhatsApp Business Down</td><td>Use direct calls and email for communication.</td><td><span class="rp-badge">All Staff</span></td><td><span class="escalation-badge">MGR-01</span></td></tr>
+            </tbody>
+        </table>
+
+        <!-- Operational Issues -->
+        <div class="section-title">
+            <h2>3. Operational Issues</h2>
+            <div class="line"></div>
+        </div>
+        <table class="contingency-table">
+            <thead><tr><th>Scenario</th><th>Immediate Action</th><th>Responsible</th><th>Escalation</th></tr></thead>
+            <tbody>
+                <tr><td class="scenario-col">Government System Delay</td><td>Inform client of potential delay. Follow up daily.</td><td><span class="rp-badge">PRO-01</span></td><td><span class="escalation-badge">MGR-01</span></td></tr>
+                <tr><td class="scenario-col">Application Rejected</td><td>Analyze rejection reason. Consult with client for solution.</td><td><span class="rp-badge">SLS-01/02</span></td><td><span class="escalation-badge">MGR-01</span></td></tr>
+                <tr><td class="scenario-col">Missing/Incorrect Documents</td><td>Contact client immediately with clear instructions.</td><td><span class="rp-badge">DOC-01</span></td><td><span class="escalation-badge">SLS-01/02</span></td></tr>
+                <tr><td class="scenario-col">Client Complaint</td><td>Listen, apologize, and understand the issue. Log in CRM.</td><td><span class="rp-badge">CSR-01</span></td><td><span class="amber-badge">SLS-01/02</span> -> <span class="escalation-badge">MGR-01</span></td></tr>
+            </tbody>
+        </table>
+
+        <!-- Emergency Scenarios -->
+        <div class="section-title">
+            <h2>4. Emergency Scenarios</h2>
+            <div class="line"></div>
+        </div>
+        <table class="contingency-table">
+            <thead><tr><th>Scenario</th><th>Immediate Action</th><th>Responsible</th><th>Escalation</th></tr></thead>
+            <tbody>
+                <tr><td class="scenario-col">Urgent Service (After Hours)</td><td>On-call staff to handle initial request.</td><td><span class="rp-badge">On-Call Rota</span></td><td><span class="escalation-badge">MGR-01</span></td></tr>
+                <tr><td class="scenario-col">VIP Client Request</td><td>Prioritize request. Assign to senior staff.</td><td><span class="rp-badge">MGR-01</span></td><td>-</td></tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
